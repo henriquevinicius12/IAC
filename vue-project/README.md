@@ -1,4 +1,4 @@
-# iac
+# vue-project
 
 ## Project setup
 ```
