@@ -1,12 +1,12 @@
 <template>
   <div id="app">  
-    <div>
-      <b-navbar toggleable="lg" type="light" variant="light">
+    <div class="h-100" style="oveflow:hidden;"> 
+      <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
 
-        <b-navbar-toggle target="nav-collapse" label="Toggle navigation"></b-navbar-toggle>
+        <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
 
         <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav small="true">
+          <b-navbar-nav small>
             <b-nav-item href="#" active>
               <strong>Home</strong>
             </b-nav-item>
@@ -19,8 +19,97 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
+    
+      <b-container fluid style="overflow: hidden;" class="vertical-center p-md-5" >
+        <div class="container-fluid shadow p-3 bg-white rounded float-left p-sm-2 p-lg-3"
+        style="height:100">
+
+          <div class="h1 w-100 text-left font-weight-bold pl-2">
+            Adicionar Perfil
+            <br> <hr style="margin-top: 8px; margin-bottom: 20px;">
+          </div>
+
+            <b-form-group  style=" line-height: 30px;"
+              label-cols-lg="3"
+              label="Informações Pessoais"
+              label-size="lg"
+              label-class="pl-2 font-weight-bold pt-0"
+              
+            >
+              <b-form-group
+                label-cols-sm="3"
+                label="Nome:"
+                label-align-sm="right"
+                label-for="nome-f"
+              >
+                <b-form-input id="nome-f"></b-form-input>
+              </b-form-group>
+
+              <b-form-group
+                label-cols-sm="3"
+                label="Idade:"
+                label-align-sm="right"
+                label-for="idade-f"
+              >
+                <b-form-input id="idade-f"></b-form-input>
+              </b-form-group>
+
+              <b-form-group
+                label-cols-sm="3"
+                label="Setor/Departamento:"
+                label-align-sm="right"
+                label-for="setor-f"
+              >
+                <b-form-input id="setor-f"></b-form-input>
+              </b-form-group>
+
+              <b-form-group
+                label-cols-sm="3"
+                label="Cargo:"
+                label-align-sm="right"
+                label-for="cargo-f"
+              >
+                <b-form-input id="cargo-f"></b-form-input>
+              </b-form-group>
+                
+              </b-form-group>
+            <hr style="margin-top: 8px; margin-bottom: 20px;">
+            
+            <b-form-group
+              label-cols-lg="3"
+              label="Informações de Contato"
+              label-size="lg"
+              label-class="pl-2 font-weight-bold pt-0"
+              class="mb-0"
+            >
+              <b-form-group
+                label-cols-sm="3"
+                label="E-mail:"
+                label-align-sm="right"
+                label-for="nome-f"
+              >
+                <b-form-input id="nome-f"></b-form-input>
+              </b-form-group>
+              
+              <b-form-group
+                label-cols-sm="3"
+                label="Telefone/Celular:"
+                label-align-sm="right"
+                label-for="idade-f"
+              >
+                <b-form-input id="idade-f"></b-form-input>
+              </b-form-group>
+                
+              </b-form-group>
+
+          <br>
+          <b-button variant="outline-primary">Adicionar Perfil</b-button>
+          <br><br>
+        </div>
+      </b-container>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -36,8 +125,18 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  
+}
+.vertical-center {
+  padding: 15px 15px;
+  min-height: 100%;
+  min-height: 100vh; 
+  display: flex;
+  position: fixed;
+  align-items: baseline;
   background-color: #2c3e50;
   background-size: auto;
 }
+
 
 </style>

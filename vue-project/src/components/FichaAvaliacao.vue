@@ -111,7 +111,7 @@
 
 </script>
 
-<style>
+<style scoped>
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -126,7 +126,7 @@
 
 
 .container-fluid{
-  padding: 15px 60px;
+  padding: 40px 60px;
   overflow: hidden;
 }
 </style>
