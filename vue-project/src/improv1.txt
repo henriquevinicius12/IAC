@@ -31,44 +31,48 @@
               label="Informações Pessoais"
               label-size="lg"
               label-class="font-weight-bold"
-              class="py-md-2">
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Nome Completo:"
-                  label-align-sm="right"
-                  label-for="nome-f"
-                  class="py-md-2"
-                ><b-form-input id="nome-f"></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Idade:"
-                  label-align-sm="right"
-                  label-for="idade-f"
-                  class="py-md-2"
-                ><b-form-input id="idade-f"></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Setor/Departamento:"
-                  label-align-sm="right"
-                  label-for="setor-f"
-                  class="py-md-2"
-                ><b-form-input id="setor-f"></b-form-input>
-                </b-form-group>
-
-                <b-form-group
-                  label-cols-sm="3"
-                  label="Cargo:"
-                  label-align-sm="right"
-                  label-for="cargo-f"
-                ><b-form-input id="cargo-f"></b-form-input>
-                </b-form-group>
+              class="py-md-2"
+            >
+              <b-form-group
+                label-cols-sm="3"
+                label="Nome Completo:"
+                label-align-sm="right"
+                label-for="nome-f"
+                class="py-md-2"
+              >
+                <b-form-input id="nome-f"></b-form-input>
               </b-form-group>
 
+              <b-form-group
+                label-cols-sm="3"
+                label="Idade:"
+                label-align-sm="right"
+                label-for="idade-f"
+                class="py-md-2"
+              >
+                <b-form-input id="idade-f"></b-form-input>
+              </b-form-group>
+
+              <b-form-group
+                label-cols-sm="3"
+                label="Setor/Departamento:"
+                label-align-sm="right"
+                label-for="setor-f"
+                class="py-md-2"
+              >
+                <b-form-input id="setor-f"></b-form-input>
+              </b-form-group>
+
+              <b-form-group
+                label-cols-sm="3"
+                label="Cargo:"
+                label-align-sm="right"
+                label-for="cargo-f"
+              >
+                <b-form-input id="cargo-f"></b-form-input>
+              </b-form-group>
+                
+              </b-form-group>
             <hr style="margin-top: 8px; margin-bottom: 20px;">
             
             <b-form-group
@@ -76,37 +80,33 @@
               label="Informações de Contato"
               label-size="lg"
               label-class="font-weight-bold"
-              class="py-md-2">
-
-                <b-form-group
+              class="py-md-2"
+            >
+              <b-form-group
                 label-cols-sm="3"
                 label="E-mail:"
                 label-align-sm="right"
                 label-for="nome-f"
                 class="py-md-2"
-                ><b-form-input id="nome-f"></b-form-input>
-                </b-form-group>
+              >
+                <b-form-input id="nome-f"></b-form-input>
+              </b-form-group>
               
-                <b-form-group
+              <b-form-group
                 label-cols-sm="3"
                 label="Telefone/Celular:"
                 label-align-sm="right"
                 label-for="idade-f"
                 class="py-md-1"
-                ><b-form-input id="idade-f"></b-form-input>
-                </b-form-group>
-
+              >
+                <b-form-input id="idade-f"></b-form-input>
               </b-form-group>
-            <br> <hr style="margin-top: 8px; margin-bottom: 20px;">
-            <!--Incluir campo para add foto-->
-            <b-form-group
-              label-cols-lg="3"
-              label="Informações Adicionais"
-              label-size="lg"
-              label-class="font-weight-bold"
-              class="py-md-2">
-            </b-form-group>
-            <b-button variant="outline-primary">Adicionar Perfil</b-button>
+                <br> <hr style="margin-top: 8px; margin-bottom: 20px;">
+                <!--Incluir campo para add foto-->
+              </b-form-group>
+
+          
+          <b-button variant="outline-primary">Adicionar Perfil</b-button>
           <br><br>
         </div>
         
@@ -132,8 +132,9 @@
   background-color: #2c3e50;
   background-size: auto;
 }
-
-
+.test{
+  background: #2c3e50;
+}
 html{
   height: 100%;
   background-color: #2c3e50;
