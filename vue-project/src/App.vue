@@ -1,63 +1,52 @@
 <template>
   <div id="app">  
-    <div class="">
-      <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
+   
+     <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav >
-            <b-nav-item href="#" active>
-              <strong>Home</strong>
+            <b-nav-item v-on:click="showList = !showList">
+              Lista de Funcionários
             </b-nav-item>
-            <b-nav-item href="#" >
-              <strong>Funcionários</strong>
-            </b-nav-item>
-            <b-nav-item href="#">
-              <strong>Meu Perfil</strong>
+            <b-nav-item href="#" v-on:click="write">
+              Meu Perfil
             </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-    </div>
 
-    <div class="container-fluid row m-0 ">
-      <div class="container-fluid row">
-        <div class="row">
-          <div class="col-4"><!-- criando pagina funcionario-->
-            <div class="list-group" role="tablist">
-              <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab">
-                <div><!--criar grupo com nome setor/departamento e cargo-->
 
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab">
-                <div>
-                  
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab">
-                <div>
 
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list" href="#list-home" role="tab">
-                <div>
+      <!-- aki vai ser a parte principal nao sei se da pra fazer com v-show e outras coisas para fazer aparecer
+      as outras telas ou usar routing. Talvez routing seja melhor?
+      fazer tela para se registrar e ver como fazer a lista em forma de tabela,nome e competencia na coluna na fila
+      a nota na competencia do funcionario. Ou em forma em que vc clicka, mostra 
+      todas as informacoes, e abre como uma tab que pra direita, com a lista na esquerda 
+      tirar fotos para amanha -->
 
-                </div>
-              </a>  
-            </div>
-          </div>
-        </div>
-           
-        
-      </div>
-        
-    </div>
-    
   </div>
 
 </template>
 
 <script>
+
+export default{
+    data() {
+        return {
+            
+                showList: false,
+                showAdd: false,
+                showProfile: false
+                
+        }
+        
+    },
+    methods: {
+        write: function(){
+            console.log(this.showList)
+        }
+    },
+}
 
 </script>
 
@@ -71,9 +60,12 @@
   color: #2c3e50;
   margin-top: 0px;  
   background-size: auto;
+  background-color: #2c3e50;
 }
 
-
+html{
+  background-color: #2c3e50;
+}
 
 
 </style>

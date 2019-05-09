@@ -1,23 +1,6 @@
 <template>
   <div id="app">  
-    <div class="">
-      <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
-        <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav >
-            <b-nav-item href="#" active>
-              <strong>Home</strong>
-            </b-nav-item>
-            <b-nav-item href="#" >
-              <strong>Funcionários</strong>
-            </b-nav-item>
-            <b-nav-item href="#">
-              <strong>Meu Perfil</strong>
-            </b-nav-item>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
+    
     <div class="container-fluid row m-0 p-3 p-md-5">
         <div class="container-fluid col-10 shadow bg-white rounded p-3 p-sm-3 px-md-5">
 
