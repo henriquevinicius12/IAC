@@ -1,29 +1,16 @@
 <template>
   <div id="app">  
-    <div class="my-auto">
-      <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
-        <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav >
-            <b-nav-item href="#" active>
-              <strong>Home</strong>
-            </b-nav-item>
-            <b-nav-item href="#" >
-              <strong>Funcionários</strong>
-            </b-nav-item>
-            <b-nav-item href="#">
-              <strong>Meu Perfil</strong>
-            </b-nav-item>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
+    
     <div class="container-fluid vertical-center p-md-5">
       <div class="container">
       <div class="survey shadow p-3 mb-5 bg-white rounded float-left float-lg-none ">
-        <div class="h1 w-100 text-left font-weight-bold pl-2 " >Avaliação de Funcionário 
-          <br> <hr style="margin-top: 8px; margin-bottom: 20px;">
+        
+        <div class="w-100 text-left mt-2 pl-2 " >
+          <h1 class="mb-3 font-weight-bold">Avaliação de Desempenho</h1> 
+          
+          <hr style="margin-top: 8px; margin-bottom: 8px;">
           <!-- maybe change to ficha de avaliacao de {{nome}}-->
+          <h2 class="pb-2 mt-3 mb-3" style="font-weight:500;">Comunicação</h2>
         </div>
         
         <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 

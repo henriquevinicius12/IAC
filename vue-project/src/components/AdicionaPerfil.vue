@@ -89,8 +89,6 @@
                 </b-form-group>
 
               </b-form-group>
-            <br> <hr style="margin-top: 8px; margin-bottom: 20px;">
-            <!--Incluir campo para add foto-->
             
             <b-button variant="outline-primary">Adicionar Perfil</b-button>
           <br><br>
