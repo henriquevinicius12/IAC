@@ -1,5 +1,5 @@
 <template>
-  <div id="app">  
+  <div id="x">  
     
     <div class="container-fluid row m-0 p-3 p-md-5">
         <div class="container-fluid col-10 shadow bg-white rounded p-3 p-sm-3 px-md-5">
@@ -101,12 +101,24 @@
 </template>
 
 <script>
+  export default{
+    
+    data(){
+      return{
+        test: 'hello'
+      }
+    }
+  }
+
+
 
 </script>
 
-<style>
 
-#app {
+<style scoped>
+
+
+#x {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -117,10 +129,5 @@
   background-size: auto;
 }
 
-
-html{
-  height: 100%;
-  background-color: #2c3e50;
-}
 
 </style>
