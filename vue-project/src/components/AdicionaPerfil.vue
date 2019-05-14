@@ -91,8 +91,10 @@
               </b-form-group>
             
             <b-button variant="outline-primary">Adicionar Perfil</b-button>
+            
           <br><br>
         </div>
+        
         
     </div>
     

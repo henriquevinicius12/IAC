@@ -18,7 +18,9 @@
         </b-collapse>
       </b-navbar>
       
-      <AddProfile/>
+
+      <EmployeeList/>
+      
 
       <!-- aki vai ser a parte principal nao sei se da pra fazer com v-show e outras coisas para fazer aparecer
       as outras telas ou usar routing. Talvez routing seja melhor?
@@ -33,11 +35,15 @@
 
 <script>
 
+import Performance from './components/FichaAvaliacao';
 import AddProfile from './components/AdicionaPerfil';
+import EmployeeList from './components/ListaFuncionario'
 
 export default{
     components:{
-      AddProfile
+      AddProfile,
+      Performance,
+      EmployeeList
     }
 }
 

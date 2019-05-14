@@ -1,5 +1,5 @@
 <template>
-  <div id="app">  
+  <div id="y">  
     
     <div class="container-fluid vertical-center p-md-5">
       <div class="container">
@@ -117,7 +117,7 @@
 
 <style scoped>
 
-#app {
+#y {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
