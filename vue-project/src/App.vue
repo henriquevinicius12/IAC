@@ -5,21 +5,20 @@
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav >
-            <b-nav-item v-on:click="showList = !showList">
+            <b-nav-item to="/employeeList">
               Lista de Funcionários
             </b-nav-item>
-            <b-nav-item href="#" v-on:click="write">
+            <b-nav-item to="/profile" >
+            <!--ver como fazer para diferentes logins-->
               Meu Perfil
             </b-nav-item>
-            <b-nav-item href="#" v-on:click="write">
-              Adicionar Perfil
+            <b-nav-item to="/add-profile">
+             Adicionar Perfil
             </b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-      
-
-      <EmployeeList/>
+      <router-view></router-view>
       
 
       <!-- aki vai ser a parte principal nao sei se da pra fazer com v-show e outras coisas para fazer aparecer
@@ -37,13 +36,17 @@
 
 import Performance from './components/FichaAvaliacao';
 import AddProfile from './components/AdicionaPerfil';
-import EmployeeList from './components/ListaFuncionario'
+import EmployeeList from './components/ListaFuncionario';
+import MyProfile from './components/MeuPerfil';
+import ProfilePage from './components/Perfil';
 
 export default{
     components:{
       AddProfile,
       Performance,
-      EmployeeList
+      EmployeeList,
+      MyProfile,
+      ProfilePage
     }
 }
 
