@@ -4,7 +4,7 @@
     <div class="container-fluid row m-0 p-3 p-md-5">
         <div class="container-fluid col-10 shadow bg-white rounded p-3 p-sm-3 px-md-5">
 
-          <div class="h1 w-100 text-left font-weight-bold pl-2">
+          <div class="h1 w-100 text-sm-center text-lg-left font-weight-bold pl-2">
             Adicionar Perfil
             <br> <hr style="margin-top: 8px; margin-bottom: 20px;">
           </div>

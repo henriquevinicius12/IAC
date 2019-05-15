@@ -3,6 +3,8 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import VueScrollto from 'vue-scrollto'
 import VueRouter from 'vue-router'
+import PortalVue from 'portal-vue'
+
 
 import Performance from './components/FichaAvaliacao'
 import AddProfile from './components/AdicionaPerfil';
@@ -13,9 +15,10 @@ import ProfilePage from './components/Perfil';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-Vue.use(BootstrapVue)
+Vue.use(PortalVue)
 Vue.use(VueScrollto)
 Vue.use(VueRouter)
+Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
 const routes = [
