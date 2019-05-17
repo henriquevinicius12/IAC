@@ -12,6 +12,7 @@ import EmployeeList from './components/ListaFuncionario.vue'
 import MyProfile from './components/MeuPerfil';
 import ProfilePage from './components/Perfil';
 
+
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
