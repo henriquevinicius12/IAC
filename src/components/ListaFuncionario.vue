@@ -12,10 +12,11 @@
                 <h1>{{ employees.forname }}</h1>
             <br>
 
-            <b-table small striped hover :items="employees" :fields="fields">
+            <b-table small striped hover :items="employees" :fields="fields" @row-clicked="clickRowHandler">
                 <template slot='nome' slot-scope="data">
                     {{ data.value.forname.charAt(0).toUpperCase() }}. {{data.value.surname}}
                 </template>
+                <b-button size="sm" @click="console.log(environment.item)">Details</b-button>
             </b-table>
             <div class="container">
                 <componentelista :parentData="employees" />
@@ -42,7 +43,7 @@ export default {
             fields:[
                 {key: 'nome', label: 'Nome', sortable: true},
                 {key: `Departamento`, sortable: true},
-                {key: `Posição`, sortable: true},
+                {key: `Cargo`, sortable: true},
                 {key: `eval.competencia1`, label: "comp1", sortable: true},
                 {key: `eval.competencia2`, label: "comp2", sortable: true},
                 {key: `eval.competencia3`, label: "comp3", sortable: true},
@@ -78,6 +79,9 @@ export default {
         methods: {
             encurta: function(forname, surname){
                 return forname.charAt(0).toUpperCase() + ". " + surname;
+            },
+            clickRowHandler: function(record, index){
+                return console.log(record.nome.surname)
             }
         }
 }
