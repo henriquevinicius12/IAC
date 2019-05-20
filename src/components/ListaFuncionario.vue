@@ -7,10 +7,16 @@
             <router-link to="/performance-survey"> Go to performance survey</router-link>
             <br>
             <br>
-            <router-link to="/profilepage">Go To profile page</router-link>
+            <router-link to="/profile-page">Go To profile page</router-link>
              <br>
                 <h1>{{ employees.forname }}</h1>
             <br>
+
+            <b-table small striped hover :items="employees" :fields="fields">
+                <template slot='nome' slot-scope="data">
+                    {{ data.value.forname.charAt(0).toUpperCase() }}. {{data.value.surname}}
+                </template>
+            </b-table>
             <div class="container">
                 <componentelista :parentData="employees" />
                 <br>
@@ -32,18 +38,26 @@ export default {
     },
     data(){
         return{
-
+            isLogged: false,
+            fields:[
+                {key: 'nome', label: 'Nome', sortable: true},
+                {key: `Departamento`, sortable: true},
+                {key: `Posição`, sortable: true},
+                {key: `eval.competencia1`, label: "comp1", sortable: true},
+                {key: `eval.competencia2`, label: "comp2", sortable: true},
+                {key: `eval.competencia3`, label: "comp3", sortable: true},
+                {key: `eval.competencia4`, label: "comp4", sortable: true}
+                ],
             employees:[
                 {
                 id: 0,
-                nome:{forname:"testando", surname:"haha"},
+                nome: {forname: "vini", surname:"henri"},
                 age: 0,
-                sector: "",
-                jobTitle: "",
-                email:"",
-                phoneNumber: "",            
-                eval:{competencia1:"", competencia2:"", competencia3:"", competencia4:""},
-                isActive: true
+                sector: "a",
+                jobTitle: "a",
+                email:"a",
+                phoneNumber: "a",            
+                eval:{competencia1:"a", competencia2:"a", competencia3:"a", competencia4:"a"},
                 }
             ],
 
@@ -58,9 +72,14 @@ export default {
                 email:"",
                 phoneNumber: ""
                 }
-            ]
+            ],
         }
-    }
+    },
+        methods: {
+            encurta: function(forname, surname){
+                return forname.charAt(0).toUpperCase() + ". " + surname;
+            }
+        }
 }
 </script>
 

@@ -1,12 +1,9 @@
 <template>
 
     <div>
-            <ul>
-                <li class="ufa" v-for="(value, name) in employees" >
-                    {{ value }}  wda- {{ name }}
-                </li>
-            </ul>
-        
+        <div>{{ employees }}</div>
+        <input type="text" v-model="texto" @click="employees.push(texto)">
+        <div>{{ this.texto }}</div>
     </div>
 
 </template>
@@ -14,7 +11,10 @@
 <script>
 export default {
     data(){
-        return {employees: this.parentData}
+        return {
+            employees: this.parentData,
+            texto: `texto`
+            }
     },
     props:{
         parentData: Array

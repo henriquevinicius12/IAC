@@ -45,11 +45,11 @@
 
                 <b-form-group
                   label-cols-sm="3"
-                  label="Setor/Departamento:"
+                  label="Departamento:"
                   label-align-sm="right"
                   label-for="setor-f"
                   class="py-md-2"
-                ><b-form-input id="setor-f"></b-form-input>
+                ><b-form-input id="departamento-f"></b-form-input>
                 </b-form-group>
 
                 <b-form-group

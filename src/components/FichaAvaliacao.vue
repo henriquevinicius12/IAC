@@ -3,7 +3,7 @@
     
     <div class="container-fluid vertical-center p-md-5">
       <div class="container">
-      <div class="survey shadow p-3 mb-5 bg-white rounded float-left float-lg-none ">
+      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
         
         <div class="w-100 text-left mt-2 pl-2 " >
           <h1 class="mb-3 font-weight-bold">Avaliação de Desempenho</h1> 
@@ -40,55 +40,6 @@
         label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
           <b-form-radio-group
             plain
-            size="lg"
-            class="pt-2"
-            :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 
-        label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
-          <b-form-radio-group
-            plain
-            size="lg"
-            class="pt-2"
-            :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 
-        label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
-          <b-form-radio-group plain
-            size="lg"
-            class="pt-2"
-            :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 
-        label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
-          <b-form-radio-group plain
-            size="lg"
-            class="pt-2"
-            :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 
-        label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
-          <b-form-radio-group plain
-            size="lg"
-            class="pt-2"
-            :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 
-        label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
-          <b-form-radio-group plain
-            size="lg"
-            class="pt-2"
-            :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"
-          ></b-form-radio-group>
-        </b-form-group>
-        <b-form-group label="1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, dolore." 
-        label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0">
-          <b-form-radio-group plain
             size="lg"
             class="pt-2"
             :options="['Nunca', 'Pouco', 'Algumas Vezes','Muito', 'Quase Sempre']"

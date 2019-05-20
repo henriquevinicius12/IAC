@@ -22,15 +22,17 @@ Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
-const routes = [
+const Routes = [
   {path: '/add-profile', component: AddProfile},
   {path: '/performance-survey', component: Performance},
-  {path: '/employeeList', component: EmployeeList},
-  {path: '/profilepage', component: ProfilePage},
+  {path: '/', component: EmployeeList},
+  {path: '/profile-page', component: ProfilePage},
   {path: '/profile', component: MyProfile}
 ]
+
 const router = new VueRouter({
-  routes
+  routes: Routes,
+  mode: 'history'
 })
 
 new Vue({
