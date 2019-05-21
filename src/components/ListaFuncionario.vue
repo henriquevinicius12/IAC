@@ -34,6 +34,7 @@
 import componentelista from './ComponenteLista';
 
 export default {
+    name: "employeelist",
     components: {
         componentelista
     },
@@ -42,8 +43,8 @@ export default {
             isLogged: false,
             fields:[
                 {key: 'nome', label: 'Nome', sortable: true},
-                {key: `Departamento`, sortable: true},
-                {key: `Cargo`, sortable: true},
+                {key: `Departamento`, label: "Departamento", sortable: true},
+                {key: `Cargo`, label: "Cargo", sortable: true},
                 {key: `eval.competencia1`, label: "comp1", sortable: true},
                 {key: `eval.competencia2`, label: "comp2", sortable: true},
                 {key: `eval.competencia3`, label: "comp3", sortable: true},

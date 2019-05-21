@@ -22,6 +22,8 @@ Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
+Vue.component('employeelist', EmployeeList)
+
 const Routes = [
   {path: '/add-profile', component: AddProfile},
   {path: '/performance-survey', component: Performance},

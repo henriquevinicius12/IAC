@@ -18,7 +18,6 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-      <employeelist></employeelist>
       <router-view></router-view>
       
 
@@ -27,20 +26,11 @@
 </template> 
 
 <script>
-
-import Performance from './components/FichaAvaliacao';
-import AddProfile from './components/AdicionaPerfil';
-import EmployeeList from './components/ListaFuncionario';
-import MyProfile from './components/MeuPerfil';
-import ProfilePage from './components/Perfil';
+import EmployeeList from "./components/ListaFuncionario"
 
 export default{
     components:{
-      AddProfile,
-      Performance,
-      EmployeeList,
-      MyProfile,
-      ProfilePage
+      EmployeeList
     }
 }
 
