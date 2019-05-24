@@ -31,7 +31,7 @@ Vue.use(BootstrapVue)
 Vue.use(onlyInt);
 Vue.config.productionTip = false
 
-
+Vue.component('Performance', Performance)
 
 export const store = new Vuex.Store({
   state:{
@@ -50,7 +50,7 @@ export const store = new Vuex.Store({
 
 const Routes = [
   {path: '/add-profile', component: AddProfile},
-  {path: '/performance-survey', component: Performance},
+  {path: '/performance-survey', component: Performance, name: "Performance"},
   {path: '/login', component: Login},
   {path: '/list', component: EmployeeList},
   {path: '/inicio', component: Inicio},

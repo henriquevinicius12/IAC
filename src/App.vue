@@ -22,7 +22,9 @@
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
-      <router-view></router-view>
+      <keep-alive include="Performance">
+        <router-view></router-view>
+      </keep-alive>
       
 
   </div>
@@ -30,7 +32,7 @@
 </template> 
 
 <script>
-
+import Performance from './components/FichaAvaliacao'
 export default{
 
 }

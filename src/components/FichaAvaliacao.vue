@@ -1,6 +1,11 @@
 <template>
   <div id="y">  
-    
+    <b-dropdown id="dropdown-dropup" dropup text="Drop-Up" variant="primary" class="m-2">
+      <b-dropdown-item v-scroll-to="'#element'">1</b-dropdown-item>
+      <b-dropdown-item>2</b-dropdown-item>
+      <b-dropdown-item>3</b-dropdown-item>
+      <b-dropdown-item>4</b-dropdown-item>
+    </b-dropdown>
     <div class="container-fluid">
       <div class="container col-md-7">
         <div class="survey shadow p-3 mt-5 mb-5 bg-white rounded float-left float-lg-none ">
@@ -272,7 +277,7 @@
       </div>
 
       <!-- PARTE 4 -->
-      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
+      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none " id="element">
         
         <div class="w-100 text-left mt-2 pl-2 " > 
           <h2 class="pb-2 mt-3 mb-3" style="font-weight:500;">Seção 4: Velocidade e horario de trabalho
