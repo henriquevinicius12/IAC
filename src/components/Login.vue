@@ -29,6 +29,10 @@
         <br>
         <b-button variant="success" to="/home">Entrar</b-button>
         <b-button variant="info" >Voltar</b-button>
+        <small>Ainda não possui conta?
+          <router-link to="/registrar">Clique Aqui</router-link>
+          para criar uma conta
+        </small>
         </div>
       
 
@@ -39,6 +43,9 @@
 </template>
 
 <script>
+export default{
+  
+}
 
 </script>
 

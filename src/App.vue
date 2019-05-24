@@ -18,9 +18,7 @@
             <!--ver como fazer para diferentes logins-->
               Login
             </b-nav-item>
-            <!--<b-nav-item to="/add-profile">
-             Adicionar Perfil
-            </b-nav-item>-->
+           
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
@@ -32,12 +30,9 @@
 </template> 
 
 <script>
-import EmployeeList from "./components/ListaFuncionario"
 
 export default{
-    components:{
-      EmployeeList
-    }
+
 }
 
 
