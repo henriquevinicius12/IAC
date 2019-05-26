@@ -14,10 +14,12 @@
             <b-nav-item v-if="(this.$store.state.isLogged)" :to="{ name: 'Performance'}">
               Avaliação
             </b-nav-item>
+            <b-nav-item v-if="(this.$store.state.isLogged)" :to="{name: 'List'}">
+              Lista de Funcionários
+            </b-nav-item>
             <b-nav-item id="items">
               Guia de Uso
             </b-nav-item>
-
           </b-navbar-nav>
             <b-navbar-nav class="ml-auto" v-if="(!this.$store.state.isLogged)">
               

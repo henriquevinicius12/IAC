@@ -1,6 +1,6 @@
 <template>
   <div id="y">  
-    <b-dropdown id="dropdown-dropup" dropup text="" variant="primary" class="m-2">
+    <b-dropdown id="scrollToDropdown" dropup text="" variant="secondary" class="m-2">
       <b-dropdown-item v-scroll-to="'#element'">1</b-dropdown-item>
       <b-dropdown-item>2</b-dropdown-item>
       <b-dropdown-item>3</b-dropdown-item>
@@ -11,7 +11,6 @@
         <div class="survey shadow p-3 mt-5 mb-5 bg-white rounded float-left float-lg-none ">
         <h1 class="mb-3 font-weight-bold">Avaliação de Desempenho</h1>
         
-        <router-link :to="{name: 'List'}">awdsadadswad</router-link>
         <b-form-group 
         label="Insira o nome do Funcionario" 
         label-align="center" 
@@ -452,7 +451,21 @@ export default{
   background-color: #2c3e50;
   background-size: auto;
 }
-
+#scrollToDropdown {
+  
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  opacity: 0.7;
+}
 
 .container-fluid{
   overflow: hidden;

@@ -1,17 +1,44 @@
 <template>
-    <div class="shadow bg-white rounded col-md-8 container p-1 my-5">
+    <div class="shadow bg-white rounded col-md-8 container px-2 py-3 my-5">
         
-        <!-- <div class="container">
-            <router-link to="/performance-survey" v-on:emitando="Pega($event)">Go to performance survey</router-link>
-            <br>
-            <router-link to="/profilepage">Go To profile page</router-link>
+        <div class="w-100 text-center mt-2 pl-2" > 
+          <h2 class="pb-2 mt-3 mb-3 " style="font-weight:500;">Lista de funcionários</h2>
+          <hr style="margin-top: 8px; margin-bottom: 12px;">
         </div>
-          
-        <router-view v-on:emitando="Pega($event)"></router-view> -->
-        <b-table striped hover :items="employees" :fields="fields">       
+        <b-row>
+        <b-col md="6" class="my-3 ml-auto">
+            <b-form-group label-cols-sm="2" label-size="md" label="Filtro" class="mb-0">
+            <b-input-group>
+                <b-form-input v-model="filter" placeholder="Pesquisar"></b-form-input>
+                <b-input-group-append>
+                <b-button :disabled="!filter" @click="filter = ''">Limpar</b-button>
+                </b-input-group-append>
+            </b-input-group>
+            </b-form-group>
+        </b-col>
+
+        </b-row>
+
+        <b-table striped hover 
+        show-empty
+        stacked="md"
+        :current-page="currentPage"
+        :per-page="perPage"
+        :filter="filter"
+        @filtered="onFiltered"
+        :items="employees" :fields="fields">       
                 
         </b-table>
-       
+        <b-row>
+            <b-col md="7" class="my-1 ml-auto">
+                <b-pagination
+                v-model="currentPage"
+                :total-rows="totalRows"
+                :per-page="perPage"
+                class="my-0"
+                ></b-pagination>
+            </b-col>
+        </b-row>
         <!-- fazer lista aqui na ficha de avaliacao vc vai colocar o nome e o departamento e resolver
         os dados entao serao mandados pra ca, 4 competencias, comunicacao, desempenho em projetos, 
         adesao a normas e comportamento, velocidade e horario de trabalho -->
@@ -35,7 +62,11 @@ export default {
                 {key: `eval.comp3`, label: "Adesão à normas e comportamentos", sortable: true},
                 {key: `eval.comp4`, label: "Velocidade e horário de trabalho", sortable: true}
                 ],
-        }
+                totalRows: 1,
+                currentPage: 1,
+                perPage: 10,
+                filter: null,
+                }
     },
     computed: {
         employees(){
@@ -45,7 +76,18 @@ export default {
             }
         }
   
-    } 
+    },
+    methods: {
+        onFiltered(filteredItems) {
+        // Trigger pagination to update the number of buttons/pages due to filtering
+        this.totalRows = filteredItems.length
+        this.currentPage = 1
+      },mounted() {
+      // Set the initial number of items
+      this.totalRows = employees.length
+      console.log(this.totalRows)
+    },
+    }
     
    
 
