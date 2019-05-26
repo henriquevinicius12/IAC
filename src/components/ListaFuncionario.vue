@@ -20,11 +20,13 @@
 </template>
 
 <script>
-import { store } from '../main'
-
 export default {
     data(){
         return{
+            user:{
+                //para cada usuario disponibilizar dados diferentes
+                username: ''
+            },
             fields:[
                 {key: 'nome', label: 'Nome', sortable: true},
                 {key: `departamento`, label: "Departamento", sortable: true},
@@ -37,9 +39,14 @@ export default {
     },
     computed: {
         employees(){
-            return this.$store.state.employees
+            for (let index = 0; index < this.$store.state.users.length; index++) {
+                const element = this.$store.state.users[index];
+                if(element.username === this.$route.params.username) return element.employees;
+            }
         }
-    }
+  
+    } 
+    
    
 
 }

@@ -1,6 +1,7 @@
 <template>
   <div id="login">  
     
+  
     <div class="container-fluid vertical-center p-md-5">
       <div class="container">
         <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
@@ -14,7 +15,6 @@
         <b-button variant="success" to="/performance-survey">Iniciar Avaliação</b-button>
         <b-button variant="info" to="/inicio" >Sair</b-button>
         </div>
-      
 
 
     </div>

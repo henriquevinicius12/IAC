@@ -1,17 +1,17 @@
 <template>
   <div id="y">  
-    <b-dropdown id="dropdown-dropup" dropup text="Drop-Up" variant="primary" class="m-2">
+    <b-dropdown id="dropdown-dropup" dropup text="" variant="primary" class="m-2">
       <b-dropdown-item v-scroll-to="'#element'">1</b-dropdown-item>
       <b-dropdown-item>2</b-dropdown-item>
       <b-dropdown-item>3</b-dropdown-item>
       <b-dropdown-item>4</b-dropdown-item>
     </b-dropdown>
     <div class="container-fluid">
-      <div class="container col-md-7">
+      <div class="container col-md-7"><!-- colocar b-form -->
         <div class="survey shadow p-3 mt-5 mb-5 bg-white rounded float-left float-lg-none ">
         <h1 class="mb-3 font-weight-bold">Avaliação de Desempenho</h1>
         
-        <router-link to="/list">awdsadadswad</router-link>
+        <router-link :to="{name: 'List'}">awdsadadswad</router-link>
         <b-form-group 
         label="Insira o nome do Funcionario" 
         label-align="center" 
@@ -362,7 +362,7 @@
           </b-form-radio-group>
         </b-form-group>
       <b-button variant="success" id="btnPrint" onclick="window.print(y) ;" class="mx-3">Imprimir</b-button>
-      <b-button variant="info" @click="emitEvent(tah5)">Limpar</b-button>
+      <b-button variant="info" @click="adicionaFuncionario(employee)">UPAR</b-button>
       </div>
       <!-- testando as variaveis -->
       <!-- <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
@@ -404,12 +404,11 @@ export default{
   data(){
     return {
       employee: {
-        nome: "",
-        departamento: ""
+        nome: "das",
+        departamento: "ate",
+        eval: { comp1: "3", comp2: "1", comp3: "11", comp4: "12" },
       },
-      eval: {
-
-      },
+      
       cbcom1: [],
       cbcom2: [],
       cbcom3: [],
@@ -434,9 +433,9 @@ export default{
     }
   },
   methods: {
-    emitEvent: function(data){
-      console.log("entro na funcao e "+ data)
-      this.$emit("emitando", data)
+    adicionaFuncionario: function(employee){
+      console.log("hey")
+      this.$store.dispatch('adicionaFuncionario', employee)
     }
   }
 }

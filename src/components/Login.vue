@@ -8,26 +8,26 @@
 
         <br>
 
-        <b-row class="my-1" :key="text">
+        <b-row class="my-1">
           <b-col sm="3">
             <label>Digite seu usuario:</label>
           </b-col>
           <b-col sm="8">
-            <b-form-input type="text"></b-form-input>
+            <b-form-input type="text" v-model="login.username"></b-form-input>
           </b-col>
         </b-row>
 
-        <b-row class="my-1" :key="password">
+        <b-row class="my-1">
           <b-col sm="3">
             <label>Digite sua senha:</label>
           </b-col>
           <b-col sm="8">
-            <b-form-input type="password"></b-form-input>
+            <b-form-input type="password" v-model="login.pw"></b-form-input>
           </b-col>
         </b-row>
 
         <br>
-        <b-button variant="success" to="/home">Entrar</b-button>
+        <b-button variant="success" @click="authenticateUser(login)">Entrar</b-button>
         <b-button variant="info" >Voltar</b-button>
         <small>Ainda não possui conta?
           <router-link to="/registrar">Clique Aqui</router-link>
@@ -44,7 +44,27 @@
 
 <script>
 export default{
-  
+  data(){
+    return {
+      login:{
+        username: "",
+        pw: "",
+      }
+    }
+  },
+  methods: {
+    authenticateUser: function(login){
+      var users = this.$store.state.users
+      for( var i = 0; i < users.length ; i++){
+        if(users[i].username === login.username && users[i].pw === login.pw){
+          console.log("usuario encontrado")
+          this.$store.dispatch("changeIsLogged")
+          this.$router.push({ name: 'userHome' , params: {username: users[i].username}})
+        } else console.log('nao encontrado') //emit invalid feedback
+      }
+
+    }
+  }
 }
 
 </script>
