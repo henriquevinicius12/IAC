@@ -5,8 +5,8 @@
           <h2 class="pb-2 mt-3 mb-3 " style="font-weight:500;">Lista de funcionários</h2>
           <hr style="margin-top: 8px; margin-bottom: 12px;">
         </div>
-        <b-row>
-        <b-col md="6" class="my-3 ml-auto">
+        <b-row class="my-3">
+        <b-col md="6" >
             <b-form-group label-cols-sm="2" label-size="md" label="Filtro" class="mb-0">
             <b-input-group>
                 <b-form-input v-model="filter" placeholder="Pesquisar"></b-form-input>
@@ -17,6 +17,12 @@
             </b-form-group>
         </b-col>
 
+        <b-col md="6" >
+        <b-form-group label-cols-sm="3" label="Per page" class="mb-0">
+          <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
+        </b-form-group>
+        </b-col>   
+
         </b-row>
 
         <b-table striped hover 
@@ -26,7 +32,8 @@
         :per-page="perPage"
         :filter="filter"
         @filtered="onFiltered"
-        :items="employees" :fields="fields">       
+        :items="employees" 
+        :fields="fields">    
                 
         </b-table>
         <b-row>
@@ -66,6 +73,7 @@ export default {
                 currentPage: 1,
                 perPage: 10,
                 filter: null,
+                pageOptions: [5, 10, 15],
                 }
     },
     computed: {
