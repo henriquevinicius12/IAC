@@ -2,7 +2,7 @@
     <div class="shadow bg-white rounded col-md-8 container px-2 py-3 my-5">
         
         <div class="w-100 text-center mt-2 pl-2" > 
-          <h2 class="pb-2 mt-3 mb-3 " style="font-weight:500;">Lista de funcionários</h2>
+          <h2 class="pb-2 mt-3 mb-3 " style="font-weight:500;">Lista de funcionários<font-awesome-icon icon='coffee'></font-awesome-icon></h2>
           <hr style="margin-top: 8px; margin-bottom: 12px;">
         </div>
         <b-row class="my-3">
@@ -34,7 +34,9 @@
         @filtered="onFiltered"
         :items="employees" 
         :fields="fields">    
-                
+        <template slot="Delete" slot-scope="row">
+            <font-awesome-icon icon="fa-trash-alt"></font-awesome-icon>
+        </template>
         </b-table>
         <b-row>
             <b-col md="7" class="my-1 ml-auto">
@@ -67,7 +69,8 @@ export default {
                 {key: `eval.comp1`, label: "Comunicação", sortable: true},
                 {key: `eval.comp2`, label: "Desempenho em projetos", sortable: true},
                 {key: `eval.comp3`, label: "Adesão à normas e comportamentos", sortable: true},
-                {key: `eval.comp4`, label: "Velocidade e horário de trabalho", sortable: true}
+                {key: `eval.comp4`, label: "Velocidade e horário de trabalho", sortable: true}, 
+                {key: 'delete', label: 'Delete Row'}
                 ],
                 totalRows: 1,
                 currentPage: 1,
@@ -106,5 +109,9 @@ export default {
 
 .container-fluid{
     background-color: white;
+}
+
+i{
+    color:black
 }
 </style>

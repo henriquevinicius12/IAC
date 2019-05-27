@@ -7,6 +7,13 @@ import PortalVue from 'portal-vue'
 import Vuex from 'vuex'
 import onlyInt from 'vue-input-only-number';
 import 'es6-promise/auto'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCoffee)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
 
 
 import Performance from './components/FichaAvaliacao'
@@ -77,7 +84,7 @@ const Routes = [
   {path: '*', redirect: '/'}, 
   {path: '/add-profile', component: AddProfile},
   {path: '/login', component:  Login},
-  {path: '/', component: Inicio, name: 'inicio'},
+  {path: '/', component: Inicio, name: 'Inicio'},
   {path: '/registrar', component: Registrar},
   {path: '/user/:username', component:  ParentComponent, meta: { auth: true }, children: [
           {path: '', component: Home, name: 'userHome'},
