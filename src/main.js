@@ -80,11 +80,11 @@ const Routes = [
   {path: '/', component: Inicio, name: 'inicio'},
   {path: '/registrar', component: Registrar},
   {path: '/user/:username', component:  ParentComponent, meta: { auth: true }, children: [
-          {path: '', component: Home, name: 'userHome'},
-          {path: 'list', component: EmployeeList, name: 'List'},
-          {path: 'performance-survey', component:  Performance, name: "Performance"},
-          {path: 'profile-page', component: ProfilePage },
-          {path: 'profile', component:  MyProfile}
+    {path: '', component: Home, name: 'userHome'},
+    {path: 'list', component: EmployeeList, name: 'List'},
+    {path: 'performance-survey', component:  Performance, name: "Performance"},
+    {path: 'profile-page', component: ProfilePage },
+    {path: 'profile', component:  MyProfile}
   ]},  
 ]
 

@@ -1,7 +1,7 @@
 <template>
   <div id="app">  
    
-     <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
+     <b-navbar id="testa" toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-brand to="/" class="" v-if="(!this.$store.state.isLogged)">
@@ -21,33 +21,33 @@
               Guia de Uso
             </b-nav-item>
           </b-navbar-nav>
-            <b-navbar-nav class="ml-auto" v-if="(!this.$store.state.isLogged)">
+            <b-navbar-nav class="ml-auto d-inline" v-if="(!this.$store.state.isLogged)">
               
                 <b-button size="md" 
-                class="my-2 mx-1 " 
+                class="my-2 ml-1 mr-2 " 
                 variant="primary" 
                 to="/login" 
                 >Fazer Login</b-button>
                 
                 <b-button size="md" 
-                class="my-2 mx-1" 
+                class="my-2 ml-1 mr-2" 
                 variant="success" 
                 to="/registrar" 
                 >Inscreva-se!</b-button>
             </b-navbar-nav>
 
-            <b-navbar-nav class="ml-auto" v-if="(this.$store.state.isLogged)">
-              <b-nav-text class="my-auto mx-1"><strong>Bem-vindo, {{ this.$route.params.username}}</strong></b-nav-text>
+            <b-navbar-nav class="ml-auto d-inline" v-if="(this.$store.state.isLogged)">
+              <b-nav-text class="my-auto ml-1 mr-2"><strong>Bem-vindo, {{ this.$route.params.username}}</strong></b-nav-text>
               
               <b-button size="md" 
-              class="my-2 mx-1" 
+              class="my-2 ml-1 mr-2" 
               variant="primary" 
               to="/" 
               @click="changeIsLogged"
               >Logout</b-button>
             </b-navbar-nav>
-          
         </b-collapse>
+          
       </b-navbar>
       <keep-alive include="Performance">
         <router-view />

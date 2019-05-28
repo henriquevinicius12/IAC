@@ -3,33 +3,31 @@
     
     <div class="container-fluid vertical-center p-md-5">
       <div class="container">
-        <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
+        <div class="survey shadow p-3 mt-3 bg-white rounded float-left float-lg-none ">
         <h1 class="mb-3 font-weight-bold">Login</h1>
 
-        <br>
-
-        <b-row class="my-1">
-          <b-col sm="3">
-            <label>Digite seu usuario:</label>
+        <b-row class="container">
+          <b-col sm="3" class="pt-2">
+            <label for="username">Digite seu usuario:</label>
           </b-col>
           <b-col sm="8">
-            <b-form-input type="text" v-model="login.username"></b-form-input>
+            <b-form-input id="username" type="text" v-model="login.username"></b-form-input>
           </b-col>
         </b-row>
 
-        <b-row class="my-1">
-          <b-col sm="3">
-            <label>Digite sua senha:</label>
+        <b-row class="container mt-2">
+          <b-col sm="3" class="pt-2">
+          <label for="pw">Digite sua senha:</label>
           </b-col>
           <b-col sm="8">
-            <b-form-input type="password" v-model="login.pw"></b-form-input>
+            <b-form-input id="pw" type="password" v-model="login.pw"></b-form-input>
           </b-col>
         </b-row>
 
         <br>
-        <b-button variant="success" @click="authenticateUser(login)">Entrar</b-button>
-        <b-button variant="info" >Voltar</b-button>
-        <small>Ainda não possui conta?
+        <b-button variant="success" class="mx-2" @click="authenticateUser(login)">Entrar</b-button>
+        <b-button variant="info" class="mr-2">Voltar</b-button>
+        <small >Ainda não possui conta?
           <router-link to="/registrar">Clique Aqui</router-link>
           para criar uma conta
         </small>
