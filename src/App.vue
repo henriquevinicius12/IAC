@@ -4,8 +4,9 @@
      <b-navbar id="testa" toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-brand to="/" class="" v-if="(!this.$store.state.isLogged)">
-          Início
+          <b-navbar-brand to="/" v-if="(!this.$store.state.isLogged)">
+          Início <i class="fas fa-camera"></i>	
+
           </b-navbar-brand>
           <b-navbar-brand :to="{name: 'userHome'}" v-if="(this.$store.state.isLogged)">
           Home
@@ -70,7 +71,8 @@ export default{
   methods: {
     changeIsLogged(){
       this.$store.dispatch("changeIsLogged")
-    } 
+      this.$router.push('/')
+    }
   }
 }
 

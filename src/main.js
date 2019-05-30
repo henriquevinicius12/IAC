@@ -7,6 +7,13 @@ import PortalVue from 'portal-vue'
 import Vuex from 'vuex'
 import onlyInt from 'vue-input-only-number';
 import 'es6-promise/auto'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faTrashAlt);
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 
 import Performance from './components/FichaAvaliacao'
@@ -51,24 +58,46 @@ export const store = new Vuex.Store({
     changeIsLogged(state){
       state.isLogged = !state.isLogged
     },
-    adicionaFuncionario(state, employee){
-      state.users.employees.push(employee)
+    adicionaFuncionario(state, item){
+      var username = item.username
+      var employee = item.employee
+      
+      var user = state.users.find( el => {return el.username === username})
+       user.employees.push({
+        nome: employee.nome,
+        departamento: employee.departamento,
+        eval: {
+          comp1: employee.eval.comp1,
+          comp2: employee.eval.comp2,
+          comp3: employee.eval.comp3,
+          comp4: employee.eval.comp4
+        }
+      })  
     },
     setUser(state, user){
       //usar getters e atualisar antes de mandar
       //user._id = state.users.length++
       state.users.push(user)
+    },
+    removeEmployee(state, username, employee){
+      var user = state.users.find( el => {return el.username === username})
+      user.employees.splice(user.employees.indexOf(employee), 1)
+
+      console.log('funcionario removido' + user)
     }
   },
   actions:{
-    adicionaFuncionario(context, employee){
-      context.commit('adicionaFuncionario', employee)
+    adicionaFuncionario( context, item){
+      context.commit('adicionaFuncionario', item)
     },
     setUser(context, user){
       context.commit('setUser', user)
     },
     changeIsLogged(context){
       context.commit('changeIsLogged')
+    },
+    removeEmployee(context, username, employee){
+      context.commit('removeEmployee', username, employee)
     }
   },
 })
@@ -77,7 +106,7 @@ const Routes = [
   {path: '*', redirect: '/'}, 
   {path: '/add-profile', component: AddProfile},
   {path: '/login', component:  Login},
-  {path: '/', component: Inicio, name: 'inicio'},
+  {path: '/', component: Inicio, name: 'Inicio'},
   {path: '/registrar', component: Registrar},
   {path: '/user/:username', component:  ParentComponent, meta: { auth: true }, children: [
     {path: '', component: Home, name: 'userHome'},

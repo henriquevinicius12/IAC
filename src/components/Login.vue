@@ -22,7 +22,7 @@
           <b-col sm="8">
             <b-form-input id="pw" type="password" v-model="login.pw"></b-form-input>
           </b-col>
-        </b-row>
+        </b-row> 
 
         <br>
         <b-button variant="success" class="mx-2" @click="authenticateUser(login)">Entrar</b-button>

@@ -403,9 +403,9 @@ export default{
   data(){
     return {
       employee: {
-        nome: "das",
-        departamento: "ate",
-        eval: { comp1: "3", comp2: "1", comp3: "11", comp4: "12" },
+        nome: "asd",
+        departamento: "asd",
+        eval: { comp1: 1, comp2: 2, comp3: 3, comp4: 4 },
       },
       
       cbcom1: [],
@@ -432,9 +432,22 @@ export default{
     }
   },
   methods: {
-    adicionaFuncionario: function(employee){
-      console.log("hey")
-      this.$store.dispatch('adicionaFuncionario', employee)
+    adicionaFuncionario(employee){
+      var item = {
+        username: this.$route.params.username,
+        employee: {
+          nome: employee.nome,
+          departamento: employee.departamento,
+          eval: {
+            comp1: employee.eval.comp1, 
+            comp2: employee.eval.comp2, 
+            comp3: employee.eval.comp3, 
+            comp4: employee.eval.comp4
+            }
+        }
+      }
+      console.log(this.$route.params.username)
+      this.$store.dispatch('adicionaFuncionario', item)
     }
   }
 }
