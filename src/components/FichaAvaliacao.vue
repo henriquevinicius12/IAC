@@ -1,14 +1,15 @@
 <template>
   <div id="y">  
-    <b-dropdown id="scrollToDropdown" dropup text="" variant="secondary" class="m-2">
-      <b-dropdown-item v-scroll-to="'#element'">1</b-dropdown-item>
-      <b-dropdown-item>2</b-dropdown-item>
-      <b-dropdown-item>3</b-dropdown-item>
-      <b-dropdown-item>4</b-dropdown-item>
-    </b-dropdown>
+    
+    <b-dropdown id="scrollToDropdown" menu-class="asd" dropup text="" variant="secondary" class="m-2">
+      <b-dropdown-item id="ignoreBootstrap" v-scroll-to="'#el4'">Seção: 4</b-dropdown-item>
+      <b-dropdown-item id="ignoreBootstrap" v-scroll-to="'#el3'">Seção: 3</b-dropdown-item>
+      <b-dropdown-item id="ignoreBootstrap" v-scroll-to="'#el2'">Seção: 2</b-dropdown-item>
+      <b-dropdown-item id="ignoreBootstrap" v-scroll-to="'#el1'">Seção: 1</b-dropdown-item>
+    </b-dropdown> 
     <div class="container-fluid">
       <div class="container col-md-7"><!-- colocar b-form -->
-        <div class="survey shadow p-3 mt-5 mb-5 bg-white rounded float-left float-lg-none ">
+        <div class="survey shadow p-3 mt-5 mb-5 bg-white rounded float-left float-lg-none">
         <h1 class="mb-3 font-weight-bold">Avaliação de Desempenho</h1>
         
         <b-form-group 
@@ -32,7 +33,7 @@
         </b-form-group>
         </div>
 
-      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
+      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none" id="el1">
         
         <div class="w-100 text-left mt-2 pl-2" > 
           <h2 class="pb-2 mt-3 mb-3" style="font-weight:500;">Seção 1: Comunicação</h2>
@@ -128,7 +129,7 @@
       
       </div>
 
-      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
+      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none" id="el2">
         
         <div class="w-100 text-left mt-2 pl-2 " > 
           <h2 class="pb-2 mt-3 mb-3" style="font-weight:500;">Seção 2: Desempenho em projetos
@@ -212,7 +213,7 @@
         </b-form-group>
       </div>
 
-      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none ">
+      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none" id="el3">
         
         <div class="w-100 text-left mt-2 pl-2 " > 
           <h2 class="pb-2 mt-3 mb-3" style="font-weight:500;">Seção 3: Adesão a Normas e comportamento
@@ -276,7 +277,7 @@
       </div>
 
       <!-- PARTE 4 -->
-      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none " id="element">
+      <div class="survey shadow p-3 mt-3 mb-5 bg-white rounded float-left float-lg-none" id="el4">
         
         <div class="w-100 text-left mt-2 pl-2 " > 
           <h2 class="pb-2 mt-3 mb-3" style="font-weight:500;">Seção 4: Velocidade e horario de trabalho
@@ -455,6 +456,10 @@ export default{
 
 <style scoped>
 
+.asd{
+  min-width: 0px; 
+}
+
 #y {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -465,7 +470,6 @@ export default{
   background-size: auto;
 }
 #scrollToDropdown {
-  
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
@@ -478,6 +482,11 @@ export default{
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
   opacity: 0.7;
+  min-width: 0px;
+}
+
+#ignoreBootstrap{
+  min-width: 0px
 }
 
 .container-fluid{
