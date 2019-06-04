@@ -1,11 +1,11 @@
 <template>
   <div id="app">  
    
-     <b-navbar id="testa" toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
+     <b-navbar id="testa" toggleable="lg" type="light" variant="light">
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-brand to="/" v-if="(!this.$store.state.isLogged)">
-          Início <i class="fas fa-camera"></i>	
+          Início 
 
           </b-navbar-brand>
           <b-navbar-brand :to="{name: 'userHome'}" v-if="(this.$store.state.isLogged)">
@@ -50,9 +50,9 @@
         </b-collapse>
           
       </b-navbar>
-      <keep-alive include="Performance">
+     
         <router-view />
-      </keep-alive>
+     
       
 
   </div>
@@ -92,9 +92,7 @@ export default{
   background-size: auto;
   background-color: #2c3e50;
 }
-#items:hover{
-  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.2);
-}
+
 html{
   background-color: #2c3e50;
 }

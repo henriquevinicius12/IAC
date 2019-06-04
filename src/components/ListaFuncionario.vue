@@ -4,7 +4,7 @@
         <div class="w-100 text-center mt-2 pl-2" > 
           <h2 class="pb-2 mt-3 mb-3 " style="font-weight:500;">Lista de funcionários</h2>
           <hr style="margin-top: 8px; margin-bottom: 12px;">
-        </div><font-awesome-icon :icon="['far','trash-alt']"/>
+        </div>
         <b-row class="my-3">
         <b-col md="6" >
             <b-form-group label-cols-sm="2" label-size="md" label="Filtro" class="mb-0">

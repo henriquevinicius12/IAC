@@ -12,8 +12,8 @@
         <p> Em caso de duvidas, consulte o guia do usuário </p>
 
         <br>
-        <b-button variant="success" to="/performance-survey">Iniciar Avaliação</b-button>
-        <b-button variant="info" to="/inicio" >Sair</b-button>
+        <b-button variant="success" :to="{ name: 'Performance'}">Iniciar Avaliação</b-button>
+        
         </div>
 
 
