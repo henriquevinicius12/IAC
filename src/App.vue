@@ -18,10 +18,12 @@
             <b-nav-item v-if="(this.$store.state.isLogged)" :to="{name: 'List'}">
               Lista de Funcionários
             </b-nav-item>
-              
-              <a href="Manual.pdf" target="_blank" download="Guia do Usuario">
+              <b-nav-item href="https://bit.ly/2WJiydq" target="_blank">
+
+             
               Guia do Usuario
-              </a>
+              
+              </b-nav-item>
             
           </b-navbar-nav>
             <b-navbar-nav class="ml-auto d-inline" v-if="(!this.$store.state.isLogged)">
