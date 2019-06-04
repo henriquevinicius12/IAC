@@ -1,7 +1,7 @@
 <template>
   <div id="app">  
    
-     <b-navbar id="testa" toggleable="lg" type="light" variant="light">
+     <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-brand to="/" v-if="(!this.$store.state.isLogged)">
@@ -11,7 +11,7 @@
           <b-navbar-brand :to="{name: 'userHome'}" v-if="(this.$store.state.isLogged)">
           Home
           </b-navbar-brand>
-          <b-navbar-nav >
+          <b-navbar-nav>
             <b-nav-item v-if="(this.$store.state.isLogged)" :to="{ name: 'Performance'}">
               Avaliação
             </b-nav-item>

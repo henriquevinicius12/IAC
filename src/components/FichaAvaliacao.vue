@@ -302,13 +302,15 @@
           <hr style="margin-top: 8px; margin-bottom: 24px;">
         </div>
       <b-button variant="primary" @click="onSubmit(employee)">Registrar funcionario</b-button>
+      <!-- coloca o botao imprimir entre esses 2 botoes -->
+
       <b-button variant="danger"  @click="onReset" class="mx-2">Limpar</b-button>
       </div>
             
       
       </div>
     </div>
-    </b-form>
+    
   </div>
 </template>
 
