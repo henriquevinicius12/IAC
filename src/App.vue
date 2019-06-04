@@ -23,7 +23,7 @@
                    SUBSTITUIR A ULTIMA PARTE DO HREF E APAGAR Aula1.pdf DA PASTA GuiaDoUsuario
                    em alguns browsers não é suportado essa função -->
               <a href="./GuiaDoUsuario/Manual.pdf" target="_blank" download="Guia do Usuario">
-              Guia de Uso
+              Guia do Usuario
               </a>
             
           </b-navbar-nav>
