@@ -18,9 +18,14 @@
             <b-nav-item v-if="(this.$store.state.isLogged)" :to="{name: 'List'}">
               Lista de Funcionários
             </b-nav-item>
-            <b-nav-item id="items">
+              <!-- SOMENTE UM EXEMPLO SUBSTITUIR O HREF PRA A URL DO ARQUIVO DO GUIA DO USUARIO 
+                   DENTRO DA PASTA public >> GuiaDoUsuario COLOCAR O ARQUIVO NESSA PASTA E 
+                   SUBSTITUIR A ULTIMA PARTE DO HREF E APAGAR Aula1.pdf DA PASTA GuiaDoUsuario
+                   em alguns browsers não é suportado essa função -->
+              <a href="./GuiaDoUsuario/Aula1.pdf" target="_blank" download>
               Guia de Uso
-            </b-nav-item>
+              </a>
+            
           </b-navbar-nav>
             <b-navbar-nav class="ml-auto d-inline" v-if="(!this.$store.state.isLogged)">
               
@@ -96,6 +101,9 @@ export default{
 html{
   background-color: #2c3e50;
 }
-
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
 
 </style>

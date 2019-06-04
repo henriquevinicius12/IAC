@@ -6,7 +6,7 @@
       <b-dropdown-item v-scroll-to="'#el2'">Seção: 2</b-dropdown-item>
       <b-dropdown-item v-scroll-to="'#el1'">Seção: 1</b-dropdown-item>
     </b-dropdown>
-    
+    <b-form>
     <div class="container-fluid">
       <div class="container col-md-7">
         <div class="survey shadow p-3 mt-5 mb-5 bg-white rounded float-left float-lg-none " id="el1">
@@ -15,6 +15,7 @@
           <hr style="margin-top: 8px; margin-bottom: 24px;">
         </div>
         <b-form-group 
+        
         label="Insira o nome do Funcionario" 
         label-align="center" 
         label-size="lg" 
@@ -58,6 +59,7 @@
         <!-- Questão 2 -->
         <b-form-group label="1.2 - Durante os sprints, o funcionario..." 
         label-align="left" label-size="lg" label-class="font-weight-bold pt-0 pl-3 pb-0"  
+        required invalid
         >
           <b-form-checkbox-group  align="left" 
             class="pt-2 pl-3"
@@ -92,6 +94,7 @@
         label-align="left" label-size="lg" label-class="font-weight-bold pl-3">
           <b-form-radio-group 
             plain
+
             v-model="rcom5"
             class="pt-2" >
             <b-form-radio value="a">Comunicativo</b-form-radio>
@@ -265,7 +268,7 @@
           <b-form-radio-group plain
             v-model="rh2"
             class="pt-2">
-            <b-form-radio value="2">Respeita os horarios</b-form-radio>
+            <b-form-radio value="3">Respeita os horarios</b-form-radio>
             <b-form-radio value="0">Não respeita</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -276,7 +279,7 @@
           <b-form-radio-group plain
             v-model="rh3"
             class="pt-2">
-              <b-form-radio value="2">Respeita os horarios</b-form-radio>
+              <b-form-radio value="3">Respeita os horarios</b-form-radio>
               <b-form-radio value="0">Não respeita</b-form-radio>
           </b-form-radio-group>
         </b-form-group>
@@ -301,16 +304,16 @@
         <div class="w-100 text-left mt-2 pl-2" > 
           <hr style="margin-top: 8px; margin-bottom: 24px;">
         </div>
-      <b-button variant="primary" @click="onSubmit(employee)">Registrar funcionario</b-button>
+      <b-button variant="primary" @click="onSubmit(employee)" class="mx-2">Registrar funcionario</b-button>
       <!-- coloca o botao imprimir entre esses 2 botoes -->
-
+      <b-button variant="success" id="btnPrint" onclick="window.print(y);" class="mx-2">Imprimir</b-button>
       <b-button variant="danger"  @click="onReset" class="mx-2">Limpar</b-button>
       </div>
             
       
       </div>
     </div>
-    
+    </b-form>
   </div>
 </template>
 
@@ -348,29 +351,39 @@ export default{
   },
   methods: {
     onSubmit(employee){
-      var soma = {
+      var resp = {
+
           com1: this.cbcom1.length,
-          com2: [],
-          com3: [],
-          com4: (this.rcom5 === 'a') ? 1: 0,
+          com2: this.cbcom2.length,
+          com3: this.cbcom3.length,
+          com4: (this.rcom5 === 'a') ? 1 : 0,
 
-          des1: [],
-          des2: [],
-          des3: "",
-          des4: "",
+          des1: this.cbdes1.length,
+          des2: this.cbdes2.length,
+          des3: (this.rdes3 === 'a') ? 1 : 0,
+          des4: (this.rdes4 === 'c2') ? 2 : 1,
 
-          nor1: "",
-          nor2: "",
-          nor3: [],
-          nor4: "",
+          nor1: (this.rnor1 === '1') ? 1 : 0,
+          nor2: (this.rnor2 === '1') ? 1 : 0,
+          nor3: this.cbnor3.length,
+          nor4: (this.rnor4 === '2a') ? 2 : 0,
 
-          h1: "",
-          h2: "",
-          h3: "",
-          h6: ""
+          h1: (this.rh1 === '2a') ? 2 : 0,
+          h2: (this.rh2 === '3') ? 3 : 0,
+          h3: (this.rh3 === '3') ? 3 : 0,
+          h4: (this.rh6 === '0') ? 0 : 2
       }
-      console.log(soma.com1)
-      console.log(soma.com4);
+
+      var com = resp.com1 + resp.com2 + resp.com3 + resp.com4
+      var des = resp.des1 + resp.des2 + resp.des3 + resp.des4 
+      var nor = resp.nor1 + resp.nor2 + resp.nor3 + resp.nor4
+      var hora   = resp.h1   + resp.h2   + resp.h3   + resp.h4
+      this.employee.eval.comp1 = com/2 
+      this.employee.eval.comp2 = (des/2 === 0.5) ? 0 : des/2
+      this.employee.eval.comp3 = nor/2
+      this.employee.eval.comp4 = (hora/2 === 1) ? 0 : hora/2
+
+
 
       var item = {
         username: this.$route.params.username,
@@ -385,29 +398,48 @@ export default{
             }
         }
       }
-      console.log(this.$route.params.username)
       this.$store.dispatch('adicionaFuncionario', item)
+      this.cbcom1 = []
+      this.cbcom2= []
+      this.cbcom3= []
+      this.rcom5= ""
+
+      this.cbdes1= []
+      this.cbdes2= []
+      this.rdes3= ""
+      this.rdes4= ""
+
+      this.rnor1= ""
+      this.rnor2= ""
+      this.cbnor3 = []
+      this.rnor4 = ""
+
+      this.rh1 =""//
+      this.rh2 =""//
+      this.rh3 = ""
+      this.rh6 = ""
+      this.$router.push({name: 'List'})
     },
     onReset(){
-      this.cbcom1 = []//4
-      this.cbcom2= []//3
-      this.cbcom3= []//3
-      this.rcom5= ""//5
+      this.cbcom1 = []
+      this.cbcom2= []
+      this.cbcom3= []
+      this.rcom5= ""
 
-      this.cbdes1= []//5
-      this.cbdes2= []//4
-      this.rdes3= ""//3
-      this.rdes4= ""//3
+      this.cbdes1= []
+      this.cbdes2= []
+      this.rdes3= ""
+      this.rdes4= ""
 
-      this.rnor1= ""//2
-      this.rnor2= ""//2
-      this.cbnor3 = []//6
-      this.rnor4 = ""//5
+      this.rnor1= ""
+      this.rnor2= ""
+      this.cbnor3 = []
+      this.rnor4 = ""
 
-      this.rh1 =""//3
-      this.rh2 =""//2
-      this.rh3 = ""//2
-      this.rh6 = ""//3
+      this.rh1 =""
+      this.rh2 =""
+      this.rh3 = ""
+      this.rh6 = ""
     }
   }
 }

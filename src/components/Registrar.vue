@@ -64,7 +64,7 @@ export default{
       }
     },
     methods: {
-      onSubmit(evt) {
+      onSubmit(evt) { 
         evt.preventDefault()
         var users = this.$store.state.users
         for( var i = 0; i < users.length ; i++){

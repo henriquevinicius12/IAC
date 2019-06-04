@@ -1,2 +1,0 @@
-ex state.todos = state.todos.filter( todo => todo.id !== id)
-pelo jeito ele tira o q estiver com o id certo
