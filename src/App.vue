@@ -19,7 +19,7 @@
               Lista de Funcionários
             </b-nav-item>
               
-              <a href="./Manual.pdf" target="_blank" download="Guia do Usuario">
+              <a href="Manual.pdf" target="_blank" download="Guia do Usuario">
               Guia do Usuario
               </a>
             
