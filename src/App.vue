@@ -4,27 +4,60 @@
      <b-navbar toggleable="lg" type="light" variant="light" style="oveflow:hidden;">
         <b-navbar-toggle target="nav-collapse" label="Toggle navigation" style="oveflow:hidden;"></b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav >
-            <b-nav-item to="/">
-              Inicio
-            </b-nav-item>
-            <b-nav-item to="/performance-survey">
+          <b-navbar-brand to="/" v-if="(!this.$store.state.isLogged)">
+          Início 
+
+          </b-navbar-brand>
+          <b-navbar-brand :to="{name: 'userHome'}" v-if="(this.$store.state.isLogged)">
+          Home
+          </b-navbar-brand>
+          <b-navbar-nav>
+            <b-nav-item v-if="(this.$store.state.isLogged)" :to="{ name: 'Performance'}">
               Avaliação
             </b-nav-item>
-            <b-nav-item to="/">
+            <b-nav-item v-if="(this.$store.state.isLogged)" :to="{name: 'List'}">
+              Lista de Funcionários
+            </b-nav-item>
+              <!-- SOMENTE UM EXEMPLO SUBSTITUIR O HREF PRA A URL DO ARQUIVO DO GUIA DO USUARIO 
+                   DENTRO DA PASTA public >> GuiaDoUsuario COLOCAR O ARQUIVO NESSA PASTA E 
+                   SUBSTITUIR A ULTIMA PARTE DO HREF E APAGAR Aula1.pdf DA PASTA GuiaDoUsuario
+                   em alguns browsers não é suportado essa função -->
+              <a href="./GuiaDoUsuario/Manual.pdf" target="_blank" download="Guia do Usuario">
               Guia de Uso
-            </b-nav-item>
-            <b-nav-item to="/login" >
-            <!--ver como fazer para diferentes logins-->
-              Login
-            </b-nav-item>
-            <!--<b-nav-item to="/add-profile">
-             Adicionar Perfil
-            </b-nav-item>-->
+              </a>
+            
           </b-navbar-nav>
+            <b-navbar-nav class="ml-auto d-inline" v-if="(!this.$store.state.isLogged)">
+              
+                <b-button size="md" 
+                class="my-2 ml-1 mr-2 " 
+                variant="primary" 
+                to="/login" 
+                >Fazer Login</b-button>
+                
+                <b-button size="md" 
+                class="my-2 ml-1 mr-2" 
+                variant="success" 
+                to="/registrar" 
+                >Inscreva-se!</b-button>
+            </b-navbar-nav>
+
+            <b-navbar-nav class="ml-auto d-inline" v-if="(this.$store.state.isLogged)">
+              <b-nav-text class="my-auto ml-1 mr-2"><strong>Bem-vindo, {{ this.$route.params.username}}</strong></b-nav-text>
+              
+              <b-button size="md" 
+              class="my-2 ml-1 mr-2" 
+              variant="primary" 
+              to="/" 
+              @click="changeIsLogged"
+              >Logout</b-button>
+            </b-navbar-nav>
         </b-collapse>
+          
       </b-navbar>
-      <router-view></router-view>
+     
+        <router-view />
+     
       
 
   </div>
@@ -32,12 +65,20 @@
 </template> 
 
 <script>
-import EmployeeList from "./components/ListaFuncionario"
 
 export default{
-    components:{
-      EmployeeList
+  data(){
+    return {
+      //username é undefined se nao estiver logado
+      username: ""
     }
+  },
+  methods: {
+    changeIsLogged(){
+      this.$store.dispatch("changeIsLogged")
+      this.$router.push('/')
+    }
+  }
 }
 
 
@@ -60,6 +101,9 @@ export default{
 html{
   background-color: #2c3e50;
 }
-
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
 
 </style>
