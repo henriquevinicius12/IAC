@@ -22,11 +22,7 @@
                    DENTRO DA PASTA public >> GuiaDoUsuario COLOCAR O ARQUIVO NESSA PASTA E 
                    SUBSTITUIR A ULTIMA PARTE DO HREF E APAGAR Aula1.pdf DA PASTA GuiaDoUsuario
                    em alguns browsers não é suportado essa função -->
-<<<<<<< HEAD
               <a href="../docs/GuiaDoUsuario/Manual.pdf" target="_blank" download="Guia do Usuario">
-=======
-              <a href="./GuiaDoUsuario/Manual.pdf" target="_blank" download="Guia do Usuario">
->>>>>>> 0bad870eb14ce47cf09179786259c90c17e1db3a
               Guia do Usuario
               </a>
             
