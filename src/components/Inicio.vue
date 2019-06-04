@@ -9,7 +9,7 @@
           <p> Em caso de duvidas, consulte o guia do usuário </p>
           <br>
           <b-button variant="success" to="/login" class="mx-2">Fazer Login</b-button>
-          <b-button variant="info" >Baixar Guia do Usuário</b-button>
+          <b-button variant="info" href="./GuiaDoUsuario/Manual.pdf" target="_blank" download="Guia do Usuario">Baixar Guia do Usuário</b-button>
         </div>
       </div>
     </div>
